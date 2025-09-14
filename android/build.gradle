@@ -1,50 +1,23 @@
-group 'com.whelksoft.flutter_native_timezone'
-version '1.0-SNAPSHOT'
-
-buildscript {
-    ext.kotlin_version = '1.5.30'
-    repositories {
-        google()
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.1'
-    }
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
 }
-
-rootProject.allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
 
 android {
     namespace 'com.lyokone.flutter_native_timezone'
-    compileSdkVersion 30
+    compileSdk 33
 
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-    }
     defaultConfig {
-        targetSdkVersion 30
-        minSdkVersion 16
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        minSdk 16
+        targetSdk 33
     }
-    lintOptions {
-        disable 'InvalidPackage'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-}
-
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.20"
 }
