@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.lyokone.flutter_native_timezone'
+    namespace 'com.whelksoft.flutter_native_timezone'
     compileSdk 33
 
     defaultConfig {
